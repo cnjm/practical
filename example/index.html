@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="../dist/cnjm-practical.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/cnjm-practical@1.0.2/dist/cnjm-practical.js"></script> -->
+</head>
+
+<body>
+
+    <script type="module">
+        // <script>
+        import $practical from '../src/index.js';
+
+        // storage  get相关返回值，set返回布尔值，以此判断是否成功
+        let { get, getAll,set,setAll,clear } = $practical.storage;
+        console.log(set("str","str_value"));
+        console.log(set("arr",[{obj_key:123456},[1,2,3]])); //支持object、string、array
+        
+        console.log(set("account",[{key1:123456},{key2:"654321"}])); //支持object、string、array
+
+        console.log(get("account","key1"));
+        console.log(get("account","key2"));
+        console.log(get("account","key3"));
+
+        console.log(setAll({key1:"string",key2:{c:1321},key3:[1,2]}));//传入一个object，将分别对key ，value值进行存储，value 支持object、string、array
+        console.log(getAll());// 获取当前域的所有存储内容，并返回一个包含所有key:value的object，value 支持object、string、array的序列化字符串
+        
+        clear();//清空所有，接受一个字符串key可以指定清除
+
+        let { format, diff,storage } = $practical.date;
+        //diff
+        // console.log(diff(1609434061000,new Date(), 'M',Math.ceil()));
+
+        //format
+        // console.log(format(new Date(), "YYYY-MM-D:HH:mm:ss", true));
+        // console.log(format(new Date(), "A-YYYY-MM-DD:hh"));
+        // console.log(format(1609434061000, "YY年MM月DD日hh时mm分ss秒SSS毫秒"));
+        // console.log(format("2021-08-08", "YY年MM月DD日hh时mm分ss秒SSS毫秒"));
+    </script>
+</body>
+
+</html>

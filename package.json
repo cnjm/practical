@@ -1,0 +1,51 @@
+{
+  "name": "cnjm-practical",
+  "version": "1.0.3",
+  "description": "一个常用工具包",
+  "keywords": [
+    "js",
+    "time"
+  ],
+  "source": "src/index.js",
+  "main": "dist/cnjm-practical.js",
+  "module": "dist/cnjm-practical.js",
+  "umd:main": "dist/cnjm-practical.js",
+  "jsdelivr": "dist/cnjm-practical.js",
+  "unpkg": "dist/cnjm-practical.js",
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "bootstrap": "npm install",
+    "clean": "rimraf dist lib",
+    "clean:all": "rimraf dist lib node_modules",
+    "babel:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib",
+    "babel:watch": "npm run babel:commonjs -- --watch",
+    "rollup": "cross-env NODE_ENV=production rollup -c",
+    "rollup:watch": "cross-env NODE_ENV=production rollup -c -w",
+    "build": "npm run clean && npm run babel:commonjs && npm run rollup"
+  },
+  "author": "cnjm",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/node": "^7.14.9",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.14.7",
+    "@babel/plugin-transform-modules-commonjs": "^7.15.0",
+    "@babel/plugin-transform-runtime": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-add-module-exports": "^1.0.4",
+    "cross-env": "^7.0.3",
+    "rollup": "^2.56.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-replace": "^2.2.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  },
+  "dependencies": {}
+}
