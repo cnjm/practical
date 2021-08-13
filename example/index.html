@@ -11,10 +11,23 @@
 </head>
 
 <body>
+    <div class="app">点击</div>
 
     <script type="module">
         // <script>
         import $practical from '../src/index.js';
+
+        // util
+        let  {copy} = $practical;
+
+        let oApp = document.querySelector(".app");
+        
+        oApp.ondblclick = function(){
+            console.log('click')
+            copy("testCopy",".app");
+        }
+        
+
 
         // storage  get相关返回值，set返回布尔值，以此判断是否成功
         let { get, getAll,set,setAll,clear ,que} = $practical.storage;
@@ -35,7 +48,7 @@
         // console.log(que({method:"get",key:"account",subKey:"key2",value:"555555"}));
         // console.log(que({method:"",key:"account",subKey:"key1",value:"555555",position:""}));
         // console.log(que({method:"get",key:"account",subKey:"key2"}));// 获取account数组下的key1的值
-        // console.log(que({method:"clear",key:"account",subKey:0}));// 删除account数组下的key1 及其值
+        // console.log(que({method:"clear",key:"account",subKey:"key2"}));// 删除account数组下的key1 及其值
 
         // console.log(get("account","key1"));
         // console.log(get("account","key2"));
@@ -49,9 +62,9 @@
         let { format, diff,storage } = $practical.date;
         //diff
         
-        console.log(diff(1609434061000,new Date(), 'Y'));//1
-        console.log(diff(1609434061000,new Date(), 'D'));//224
-        console.log(diff(1609434061000,new Date(), '',(num) => Math.ceil(num)));//19323249254
+        // console.log(diff(1609434061000,new Date(), 'Y'));//1
+        // console.log(diff(1609434061000,new Date(), 'D'));//224
+        // console.log(diff(1609434061000,new Date(), '',(num) => Math.ceil(num)));//19323249254
 
         //format
         // console.log(format(new Date(), "YYYY-MM-D:HH:mm:ss", true));

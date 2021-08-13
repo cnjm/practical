@@ -24,7 +24,7 @@ const que = (arg) => {
   if (!key || !isString(key)) {
     return false;
   }
-  let arr = get(key);
+  let arr = get(key) || [];
   if (isNumber(subKey)) {
     if (method === "clear") {
       arr.splice(subKey, 1);
