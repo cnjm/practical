@@ -1,4 +1,4 @@
-import { isDate } from '../utils/isType.js'
+import { isDate } from '../_internal/isType.js'
 
 const diff = (date1, date2, unit, roundFunc = (num) => Math.round(num)) => {
   const d1 = isDate(date1) ? date1 : new Date(date1);

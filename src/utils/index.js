@@ -1,23 +1,8 @@
-import { isString } from './isType.js';
 
-const copy = (str, el = "body") => {
-  if (!document || !isString(str)) {
-    return false;
-  }
-  const input = document.createElement('input');
-  const a = document.querySelector(el);
-  input.value = str;
-  a.append(input);
-  input.select();
-  document.execCommand('Copy');
-  a.removeChild(input);
-  return true;
-}
-
-const cloneDeep = () => {
-  console.log("clone")
-}
+import cloneDeep from './copy.js';
+import copy from './copy.js';
+import uaCheck from './uaCheck.js';
 
 export default {
-  copy, cloneDeep
+  copy, cloneDeep, uaCheck
 }

@@ -1,4 +1,4 @@
-import { isDate, isString, isNumber } from '../utils/isType.js';
+import { isDate, isString, isNumber } from '../_internal/isType.js';
 
 const dateFormat = (date, format, isUTC) => {
   if (!isNumber(date) && !isString(date) && !isDate(date)) {

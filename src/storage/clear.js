@@ -1,5 +1,5 @@
 
-import { isString } from '../utils/isType.js'
+import { isString } from '../_internal/isType.js'
 const clear = (key) => {
   if (isString(key)) {
     localStorage.removeItem(key);

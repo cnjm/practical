@@ -1,4 +1,4 @@
-import { isObject, isArray, isString, isNumber } from '../utils/isType.js';
+import { isObject, isString, isNumber } from '../_internal/isType.js';
 import set from './set.js';
 import get from './get.js';
 import clear from './clear.js';

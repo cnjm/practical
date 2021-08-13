@@ -1,4 +1,4 @@
-import { isObject, isArray, isString } from '../utils/isType.js';
+import { isObject, isArray, isString } from '../_internal/isType.js';
 
 const set = (...arg) => {
   if (arg.length <= 0 || arg.length > 2) {
