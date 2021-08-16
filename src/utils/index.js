@@ -1,6 +1,6 @@
 
-import cloneDeep from './copy.js';
 import copy from './copy.js';
+import cloneDeep from './cloneDeep.js';
 import uaCheck from './uaCheck.js';
 
 export default {

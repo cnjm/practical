@@ -5,6 +5,10 @@ const isType = function (o) {
   return s.match(/\[object (.*?)\]/)[1].toLowerCase();
 };
 
+export const isPrimitive = (o) => {
+  let name = isType(o);
+  return (name === "string" || name === "number" || name === "symbol" || name === "boolean");
+}
 export const isDate = (o) => {
   return isType(o) === "date";
 }
@@ -19,4 +23,7 @@ export const isObject = (o) => {
 }
 export const isArray = (o) => {
   return isType(o) === "array";
+}
+export const isBuffer = (o) => {
+  return isType(o) === "buffer";
 }

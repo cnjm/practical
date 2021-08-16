@@ -18,25 +18,46 @@
         import $practical from '../src/index.js';
 
         // util
-        let  {copy,uaCheck} = $practical;
-
-        console.log(uaCheck("Windows"))
-        console.log(uaCheck("MacOS"))
-        console.log(uaCheck("Linux"))
-        console.log(uaCheck("Android"))
-        console.log(uaCheck("IOS"))
-        console.log(uaCheck("Mobile"))
-        console.log(uaCheck("Tablet"))
-        console.log(uaCheck("WeChat"))
-        console.log(uaCheck("IPhone"))
-        console.log(uaCheck("IPad"))
-
-        let oApp = document.querySelector(".app");
-        
-        oApp.ondblclick = function(){
-            console.log('click')
-            copy("testCopy",".app");
+        let  {copy,uaCheck,cloneDeep} = $practical;
+        let test = {
+            a:'123',
+            b:123,
+            c:[{d:'hh'}],
+            e:function(num){return num},
+            f:null,
+            g:undefined,
+            h:new Date(),
+            i:{j:{k:{l:"mn"}}}
         }
+        let out = cloneDeep(test);
+        test.a = '321';
+        test.b = '321';
+        test.c = [{d:'gg'}];
+        test.e = function(num){return num+1};
+        test.f = undefined;
+        test.g = null;
+        test.i = {};
+        test.h = new Date(1629097648000);
+        console.log(out.e(555),Date.parse(out.h));
+        console.log(test.e(555),Date.parse(test.h));
+
+        // console.log(uaCheck("Windows"))
+        // console.log(uaCheck("MacOS"))
+        // console.log(uaCheck("Linux"))
+        // console.log(uaCheck("Android"))
+        // console.log(uaCheck("IOS"))
+        // console.log(uaCheck("Mobile"))
+        // console.log(uaCheck("Tablet"))
+        // console.log(uaCheck("WeChat"))
+        // console.log(uaCheck("IPhone"))
+        // console.log(uaCheck("IPad"))
+
+        // let oApp = document.querySelector(".app");
+        
+        // oApp.ondblclick = function(){
+        //     console.log('click')
+        //     copy("testCopy",".app");
+        // }
         
 
 

@@ -1,10 +1,12 @@
 {
   "name": "cnjm-practical",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "一个常用工具包",
   "keywords": [
     "js",
-    "time"
+    "date",
+    "storage",
+    "clone"
   ],
   "source": "src/index.js",
   "main": "dist/cnjm-practical.js",
