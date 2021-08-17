@@ -18,28 +18,34 @@
         import $practical from '../src/index.js';
 
         // util
-        let  {copy,uaCheck,cloneDeep} = $practical;
-        let test = {
-            a:'123',
-            b:123,
-            c:[{d:'hh'}],
-            e:function(num){return num},
-            f:null,
-            g:undefined,
-            h:new Date(),
-            i:{j:{k:{l:"mn"}}}
-        }
-        let out = cloneDeep(test);
-        test.a = '321';
-        test.b = '321';
-        test.c = [{d:'gg'}];
-        test.e = function(num){return num+1};
-        test.f = undefined;
-        test.g = null;
-        test.i = {};
-        test.h = new Date(1629097648000);
-        console.log(out.e(555),Date.parse(out.h));
-        console.log(test.e(555),Date.parse(test.h));
+        let  {copy,uaCheck,cloneDeep,regToYuan,regToFen} = $practical;
+
+        console.log(regToYuan(0.2,1000));//0.002
+        console.log(regToYuan(5000.22));//50
+        console.log(regToFen('300.25',1000));
+        console.log(regToFen(300.25,100));
+
+        // let test = {
+        //     a:'123',
+        //     b:123,
+        //     c:[{d:'hh'}],
+        //     e:function(num){return num},
+        //     f:null,
+        //     g:undefined,
+        //     h:new Date(),
+        //     i:{j:{k:{l:"mn"}}}
+        // }
+        // let out = cloneDeep(test);
+        // test.a = '321';
+        // test.b = '321';
+        // test.c = [{d:'gg'}];
+        // test.e = function(num){return num+1};
+        // test.f = undefined;
+        // test.g = null;
+        // test.i = {};
+        // test.h = new Date(1629097648000);
+        // console.log(out.e(555),Date.parse(out.h));
+        // console.log(test.e(555),Date.parse(test.h));
 
         // console.log(uaCheck("Windows"))
         // console.log(uaCheck("MacOS"))
