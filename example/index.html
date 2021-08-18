@@ -17,13 +17,18 @@
         // <script>
         import $practical from '../src/index.js';
 
-        // util
-        let  {copy,uaCheck,cloneDeep,regToYuan,regToFen} = $practical;
+        //url
+        let  {url} = $practical;
+        console.log(url.paramToObj("http://cdn.jsdelivr.net/npm/cnjm-practical@1.0.2/dist/index.html?a=1&b=2"))
 
-        console.log(regToYuan(0.2,1000));//0.002
-        console.log(regToYuan(5000.22));//50
-        console.log(regToFen('300.25',1000));
-        console.log(regToFen(300.25,100));
+        // util
+        let  {copy,uaCheck,cloneDeep,regToYuan,regToFen,getByteLen} = $practical;
+
+        console.log(getByteLen('hh哈'))
+        // console.log(regToYuan(0.2,1000));//0.002
+        // console.log(regToYuan(5000.22));//50
+        // console.log(regToFen('300.25',1000));
+        // console.log(regToFen(300.25,100));
 
         // let test = {
         //     a:'123',
