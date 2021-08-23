@@ -1,6 +1,6 @@
 {
   "name": "cnjm-practical",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "一个常用工具包",
   "keywords": [
     "js",
@@ -25,7 +25,8 @@
     "babel:watch": "npm run babel:commonjs -- --watch",
     "rollup": "cross-env NODE_ENV=production rollup -c",
     "rollup:watch": "cross-env NODE_ENV=production rollup -c -w",
-    "build": "npm run clean && npm run babel:commonjs && npm run rollup"
+    "build": "npm run clean && npm run babel:commonjs && npm run rollup",
+    "build:publish": "npm run build && npm publish"
   },
   "author": "cnjm",
   "license": "ISC",

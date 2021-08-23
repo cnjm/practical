@@ -17,14 +17,57 @@
         // <script>
         import $practical from '../src/index.js';
 
+        // PSet
+        let  {PSet} = $practical;
+        let arr1 = new Set([1,2,3,4,5,6,7,8,9])
+        let arr2 = new Set([1,2,3,7,8,9,10])
+        let arr3 = new Set([4,5,6])
+        const pset = new PSet();
+
+        // union 返回两个或更多集合的并集
+        // console.log([...pset.union(arr2,arr3)]);// [1, 2, 3, 7, 8, 9, 10, 4, 5, 6]
+        
+        // intersection 返回两个或更多集合的交集
+        // console.log(pset.intersection(arr1,arr2));// Set(6) {1, 2, 3, 7, 8, 9}
+        
+        // difference 返回两个集合的差集 a - b;
+        // console.log(pset.difference(arr1,arr2));
+        
+        // symmetricDifference 返回两个集合的对称差集
+        // console.log(pset.symmetricDifference(arr1,arr2));// Set(4) {4, 5, 6, 10}
+
+        // cartesianProduct 返回两个集合（数组对形式）的笛卡儿积
+        // 必须返回数组集合，因为笛卡儿积可能包含相同值的对
+        // console.log(pset.cartesianProduct(arr2,arr3));// Set(21) {Array(2), Array(2), Array(2), Array(2), Array(2), …}
+
+        // powerSet 返回一个集合的幂集
+        // console.log(pset.powerSet(arr3));
+        // 0: Set(0)
+        // value: Set(0) {}
+        // 1: Set(1)
+        // value: Set(1) {4}
+        // 2: Set(1)
+        // value: Set(1) {5}
+        // 3: Set(2)
+        // value: Set(2) {4, 5}
+        // 4: Set(1)
+        // value: Set(1) {6}
+        // 5: Set(2)
+        // value: Set(2) {4, 6}
+        // 6: Set(2)
+        // value: Set(2) {5, 6}
+        // 7: Set(3)
+        // value: Set(3) {4, 5, 6}
+
+
         //url
         let  {url} = $practical;
-        console.log(url.paramToObj("http://cdn.jsdelivr.net/npm/cnjm-practical@1.0.2/dist/index.html?a=1&b=2"))
+        // console.log(url.paramToObj("http://cdn.jsdelivr.net/npm/cnjm-practical@1.0.2/dist/index.html?a=1&b=2"))
 
         // util
         let  {copy,uaCheck,cloneDeep,regToYuan,regToFen,getByteLen} = $practical;
 
-        console.log(getByteLen('hh哈'))
+        // console.log(getByteLen('哈'))
         // console.log(regToYuan(0.2,1000));//0.002
         // console.log(regToYuan(5000.22));//50
         // console.log(regToFen('300.25',1000));
